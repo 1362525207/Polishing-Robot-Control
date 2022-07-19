@@ -1,0 +1,8 @@
+prefix=/home/mhq/mingurdf2/devel
+
+Name: roscontrol
+Description: Description of roscontrol
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

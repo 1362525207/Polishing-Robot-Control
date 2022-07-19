@@ -1,0 +1,28 @@
+source: arm.yaml
+port: /dev/myrob
+#max_angle: 360, min_angle: -360,max_speed: 1000
+joints: {
+    zhixianmove:
+    {id: 1, neutral: 512,
+      min_angle: -360, max_angle: 360},
+    zhuan1: 
+    {id: 2, neutral: 512,
+      min_angle: -360,max_angle: 360},
+    zhuan2: 
+    {id: 3, neutral: 512,
+      min_angle: -360,max_angle: 360},
+    zhuan3: 
+    {id: 4, neutral: 512,
+      min_angle: -360,max_angle: 360},
+    zhuan4: 
+    {id: 5, neutral: 512,
+      min_angle: -360,max_angle: 360},
+    zhuan5: 
+    {id: 6, neutral: 512,
+      min_angle: -360,max_angle: 360},
+}
+controllers: {
+    arm_controller: {onboard: False, type: follow_controller, 
+      action_name: arm_controller/follow_joint_trajectory,
+      joints: [ zhixianmove, zhuan1, zhuan2, zhuan3, zhuan4, zhuan5 ]}
+}

@@ -1,0 +1,41 @@
+arm:
+  arm_joint_controller:
+    type: "effort_controllers/JointTrajectoryController"
+    joints:
+      - zhixianmove
+      - zhuan1
+      - zhuan2
+      - zhuan3
+      - zhuan4
+      - zhuan5
+    gains:
+      zhixianmove:
+        p: 800.0
+        d: 60.0
+        i: 200
+        i_clamp: 500
+      zhuan1:
+        p: 400
+        d: 30
+        i: 30
+        i_clamp: 300
+      zhuan2:
+        p: 200
+        d: 30
+        i: 25
+        i_clamp: 300
+      zhuan3:
+        p: 100
+        d: 2
+        i: 15
+        i_clamp: 300
+      zhuan4:
+        p: 100
+        d: 2
+        i: 15
+        i_clamp: 300
+      zhuan5:
+        p: 0.0
+        d: 0.0
+        i: 0.0
+        i_clamp: 50

@@ -1,0 +1,2 @@
+mingmoveit_config:mingurdf:myrobot_control:roscontrol
+-DCMAKE_BUILD_TYPE=RelWithDebInfo -DCATKIN_DEVEL_PREFIX=/home/mhq/mingurdf2/devel -DCMAKE_INSTALL_PREFIX=/home/mhq/mingurdf2/install -G Unix Makefiles

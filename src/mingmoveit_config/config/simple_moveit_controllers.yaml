@@ -1,0 +1,23 @@
+controller_list:
+  - name: arm_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: True
+    joints:
+      - zhixianmove
+      - zhuan1
+      - zhuan2
+      - zhuan3
+      - zhuan4
+      - zhuan5
+  - name: controller_gazebo
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: True
+    joints:
+      - zhixianmove
+      - zhuan1
+      - zhuan2
+      - zhuan3
+      - zhuan4
+      - zhuan5

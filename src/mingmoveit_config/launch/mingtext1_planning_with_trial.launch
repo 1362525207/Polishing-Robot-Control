@@ -1,0 +1,27 @@
+<launch>
+    <!-- 不使用仿真时间 -->
+    <param name="/use_sim_time" value="false" />
+
+    <!-- 启动 arbotix driver-->
+    <arg name="sim" default="true" />
+
+    <param name="robot_description" textfile="$(find mingurdf)/urdf/mingurdf.urdf" />
+
+    <node name="arm_controller" pkg="arbotix_python" type="arbotix_driver" output="screen">
+        <rosparam command="load" file="$(find mingmoveit_config)/config/arm_copy.yaml"  />
+        <param name="sim" value="true"/>
+    </node>
+
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="rob_st_pub" />
+
+    <include file="$(find mingmoveit_config)/launch/move_group.launch"/>
+    <!--
+            
+                <arg name="moveit_controller_manager" value="arm" />
+    </include>
+    -->
+    <!-- 启动rviz可视化界面 -->
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find mingmoveit_config)/urdf/fake_arm_urdf.rviz" required="true" /> 
+
+
+</launch>

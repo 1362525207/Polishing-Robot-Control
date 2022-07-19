@@ -1,0 +1,21 @@
+<!-- 配置moveit关节控制器  p322    1   -->
+<launch>
+
+    <!-- 不使用仿真时间 -->
+    <param name="/use_sim_time" value="false" />
+
+    <param name="robot_description" textfile="$(find mingurdf)/urdf/mingurdf.urdf" />
+
+    <!-- 启动arbotix driver-->
+    <arg name="sim" default="true" />
+    <node name="arbotix" pkg="arbotix_python" type="arbotix_driver" output="screen">
+        <rosparam file="$(find mingmoveit_config)/config/arm.yaml" command="load" />
+        <param name="sim" value="true"/>
+    </node>
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="rob_st_pub" />
+    <!-- 启动rviz -->
+
+    <!-- 配置保存后，把上面的注释，下面这个注释打开 -->
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find mingmoveit_config)/urdf/fake_arm_urdf.rviz" required="true" /> 
+
+</launch>

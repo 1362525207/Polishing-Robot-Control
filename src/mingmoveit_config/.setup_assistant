@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: mingurdf
+    relative_path: urdf/mingurdf.urdf
+    xacro_args: ""
+  SRDF:
+    relative_path: config/mingurdf.srdf
+  CONFIG:
+    author_name: minghengqiang
+    author_email: minghq@126.com
+    generated_timestamp: 1650960086

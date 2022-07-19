@@ -1,0 +1,14 @@
+<launch>
+	<!-- Define MoveIt controller manager plugin -->
+	<param name="moveit_controller_manager" value="moveit_ros_control_interface::MoveItControllerManager" />
+</launch>
+
+<!--
+<launch>
+	<arg name="moveit_controller_manager" default="moveit_simple_controller_manager/MoveItSimpleControllerManager"/>
+	<param name="moveit_controller_manager" value="$(arg moveit_controller_manager)"/>
+	<! gazebo Controller >
+	<rosparam file="$(find probot_anno_moveit_config)/config/controllers_gazebo.yaml"/>
+</launch>
+
+-->

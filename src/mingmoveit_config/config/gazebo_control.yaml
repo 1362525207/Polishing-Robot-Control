@@ -1,0 +1,62 @@
+arm:
+  # Publish joint_states
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50
+  # Position Controllers ---------------------------------------
+  joint1_position_controller:
+    type: position_controllers/JointPositionController
+    joint: zhixianmove
+    pid: {p: 1.0, i: 0.0, d: 0.0}
+  joint2_position_controller:
+    type: position_controllers/JointPositionController
+    joint: zhuan1
+    pid: {p: 1.0, i: 0.0, d: 0.0}
+  joint3_position_controller:
+    type: position_controllers/JointPositionController
+    joint: zhuan2
+    pid: {p: 1.0, i: 0.0, d: 0.0}
+  joint4_position_controller:
+    type: position_controllers/JointPositionController
+    joint: zhuan3
+    pid: {p: 1.0, i: 0.0, d: 0.0}
+  joint5_position_controller:
+    type: position_controllers/JointPositionController
+    joint: zhuan4
+    pid: {p: 1.0, i: 0.0, d: 0.0}
+  joint6_position_controller:
+    type: position_controllers/JointPositionController
+    joint: zhuan5
+    pid: {p: 1.0, i: 0.0, d: 0.0}
+
+  gazebo_ros_control:
+    pid_gains:
+      zhixianmove:
+        p: 20.0
+        d: 1.0
+        i: 0.1
+
+      zhuan1:
+        p: 20.0
+        d: 2.0
+        i: 0.1
+
+      zhuan2:
+        p: 10.0
+        d: 1.0
+        i: 0.1
+
+      zhuan3:
+        p: 10.0
+        d: 1.0
+        i: 0.1
+
+      zhuan4:
+        p: 10.0
+        d: 1.0
+        i: 0.1
+
+      zhuan5:
+        p: 1.0
+        d: 0.0
+        i: 0.0

@@ -1,0 +1,15 @@
+<launch>
+  
+    <!-- Launch Gazebo -->
+    <include file="$(find mingurdf)/launch/gazebotext.launch" />
+
+
+    <include file="$(find myrobot_control)/launch/arm_gazebo_states.launch" />   
+    
+    <include file="$(find myrobot_control)/launch/myrobot_trajectory.launch" />
+
+    <include file="$(find myrobot_control)/launch/arm_moveit_control_manager.launch" />
+    
+    
+</launch>
+

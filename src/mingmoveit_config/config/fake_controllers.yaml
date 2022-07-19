@@ -1,0 +1,13 @@
+controller_list:
+  - name: fake_arm_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - zhixianmove
+      - zhuan1
+      - zhuan2
+      - zhuan3
+      - zhuan4
+      - zhuan5
+initial:  # Define initial robot poses per group
+  - group: arm
+    pose: home

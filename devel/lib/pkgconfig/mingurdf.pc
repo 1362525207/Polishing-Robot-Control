@@ -1,0 +1,8 @@
+prefix=/home/mhq/mingurdf2/devel
+
+Name: mingurdf
+Description: Description of mingurdf
+Version: 1.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

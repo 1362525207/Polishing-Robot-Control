@@ -1,0 +1,23 @@
+digraph G {
+node [shape=box];
+"base_link" [label="base_link"];
+"zuobiao1" [label="zuobiao1"];
+"zuobiao2" [label="zuobiao2"];
+"zuobiao3" [label="zuobiao3"];
+"zuobiao4" [label="zuobiao4"];
+"zuobiao5" [label="zuobiao5"];
+"zuobiao6" [label="zuobiao6"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"base_link" -> "zhixianmove" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"zhixianmove" -> "zuobiao1"
+"zuobiao1" -> "zhuan1" [label="xyz: 0 0 0.037731 \nrpy: 0 -0 0"]
+"zhuan1" -> "zuobiao2"
+"zuobiao2" -> "zhuan2" [label="xyz: 0.26 0 0 \nrpy: 0 -0 0"]
+"zhuan2" -> "zuobiao3"
+"zuobiao3" -> "zhuan3" [label="xyz: 0.26 0 0 \nrpy: 0 -0 1.5708"]
+"zhuan3" -> "zuobiao4"
+"zuobiao4" -> "zhuan4" [label="xyz: 0 0 0 \nrpy: -0.7854 0 0"]
+"zhuan4" -> "zuobiao5"
+"zuobiao5" -> "zhuan5" [label="xyz: 0 0 0 \nrpy: 0.7854 -0 0"]
+"zhuan5" -> "zuobiao6"
+}

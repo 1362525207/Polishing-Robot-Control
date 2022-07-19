@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="mingurdf">
+  <link name="base_footprint">
+  </link>
+  <joint name="base_footprint_joint" type="fixed">
+    <parent link="base_footprint" />
+    <child link="base_link" />
+  </joint>
+
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.0911857881097258 -8.30196663443789E-08 -0.106885396772365"
+        rpy="0 0 0" />
+      <mass
+        value="448.455291712727" />
+      <inertia
+        ixx="30.9134960552599"
+        ixy="5.36772417285236E-05"
+        ixz="12.5203241084851"
+        iyy="53.9280769799438"
+        iyz="1.30394915172682E-06"
+        izz="37.81104965848" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mingurdf/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.95 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mingurdf/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+    <gazebo reference="base_link">
+        <kinematic>1</kinematic>
+        <material>Gazebo/White</material>
+    </gazebo>
+  <link
+    name="zuobiao1">
+    <inertial>
+      <origin
+        xyz="-0.0730125778611653 -0.00193381535218838 0.129516675570009"
+        rpy="0 0 0" />
+      <mass
+        value="6.30779983026107" />
+      <inertia
+        ixx="0.0323636140052051"
+        ixy="-0.000620304176738022"
+        ixz="-3.5386391122811E-05"
+        iyy="0.0176326975631143"
+        iyz="5.8982317239007E-06"
+        izz="0.0389930743174185" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mingurdf/meshes/zuobiao1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mingurdf/meshes/zuobiao1.STL" />
+      </geometry>
+    </collision>
+  </link>
+      <gazebo reference="zuobiao1">
+        <material>Gazebo/White</material>
+      </gazebo>
+  <joint
+    name="zhixianmove"
+    type="prismatic">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="zuobiao1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0.19"
+      effort="10000"
+      velocity="1000" />
+  </joint>
+  <link
+    name="zuobiao2">
+    <inertial>
+      <origin
+        xyz="0.108075719291185 -4.88178375396993E-17 0.160924114447853"
+        rpy="0 0 0" />
+      <mass
+        value="3.33164684937567" />
+      <inertia
+        ixx="0.00472553809345875"
+        ixy="2.27816436130718E-18"
+        ixz="0.00117151756376351"
+        iyy="0.0393814222121523"
+        iyz="1.33224960462247E-19"
+        izz="0.0426002783406026" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mingurdf/meshes/zuobiao2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 0.9 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mingurdf/meshes/zuobiao2.STL" />
+      </geometry>
+    </collision>
+  </link>
+      <gazebo reference="zuobiao2">
+        <material>Gazebo/White</material>
+      </gazebo>
+  <joint
+    name="zhuan1"
+    type="revolute">
+    <origin
+      xyz="0 0 0.037731"
+      rpy="0 0 0" />
+    <parent
+      link="zuobiao1" />
+    <child
+      link="zuobiao2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="10"
+      velocity="10" />
+  </joint>
+  <link
+    name="zuobiao3">
+    <inertial>
+      <origin
+        xyz="0.0973872089275022 -1.52786082991248E-05 0.221695666648077"
+        rpy="0 0 0" />
+      <mass
+        value="2.73296761154439" />
+      <inertia
+        ixx="0.00295417661232808"
+        ixy="-2.50064683376093E-06"
+        ixz="-0.00150640062102406"
+        iyy="0.0263468290547237"
+        iyz="5.44698987392585E-08"
+        izz="0.027679166905413" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mingurdf/meshes/zuobiao3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.9 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mingurdf/meshes/zuobiao3.STL" />
+      </geometry>
+    </collision>
+  </link>
+      <gazebo reference="zuobiao3">
+        <material>Gazebo/White</material>
+      </gazebo>
+  <joint
+    name="zhuan2"
+    type="revolute">
+    <origin
+      xyz="0.26 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="zuobiao2" />
+    <child
+      link="zuobiao3" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.142"
+      upper="3.142"
+      effort="10"
+      velocity="10" />
+  </joint>
+  <link
+    name="zuobiao4">
+    <inertial>
+      <origin
+        xyz="-0.000104161259009247 0.0632858569439245 0.141469261146007"
+        rpy="0 0 0" />
+      <mass
+        value="1.16079385341549" />
+      <inertia
+        ixx="0.00340418846413939"
+        ixy="7.39976587143445E-07"
+        ixz="-8.67663472417606E-07"
+        iyy="0.0019704941257227"
+        iyz="0.00137214690299302"
+        izz="0.00238974121657912" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mingurdf/meshes/zuobiao4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 0.95 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mingurdf/meshes/zuobiao4.STL" />
+      </geometry>
+    </collision>
+  </link>
+      <gazebo reference="zuobiao4">
+        <material>Gazebo/White</material>
+      </gazebo>
+  <joint
+    name="zhuan3"
+    type="revolute">
+    <origin
+      xyz="0.26 0 0"
+      rpy="0 0 1.5708" />
+    <parent
+      link="zuobiao3" />
+    <child
+      link="zuobiao4" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-0.2"
+      upper="6.283"
+      effort="10"
+      velocity="10" />
+
+  </joint>
+  <link
+    name="zuobiao5">
+    <inertial>
+      <origin
+        xyz="-3.28386382188242E-09 -0.0325666734533583 0.0615766016931337"
+        rpy="0 0 0" />
+      <mass
+        value="1.17546911173839" />
+      <inertia
+        ixx="0.00131428250418852"
+        ixy="1.19821788071572E-10"
+        ixz="-2.39301241706768E-10"
+        iyy="0.00142734787023168"
+        iyz="-0.000488076955488595"
+        izz="0.00146142645399807" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mingurdf/meshes/zuobiao5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.9 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mingurdf/meshes/zuobiao5.STL" />
+      </geometry>
+    </collision>
+  </link>
+      <gazebo reference="zuobiao5">
+        <material>Gazebo/White</material>
+      </gazebo>
+  <joint
+    name="zhuan4"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="-0.7854 0 0" />
+    <parent
+      link="zuobiao4" />
+    <child
+      link="zuobiao5" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14159"
+      upper="3.14159"
+      effort="10"
+      velocity="10" />
+  </joint>
+  <link
+    name="zuobiao6">
+    <inertial>
+      <origin
+        xyz="7.75352320290942E-06 1.57367979316536E-05 0.0352281757037771"
+        rpy="0 0 0" />
+      <mass
+        value="0.348126651606832" />
+      <inertia
+        ixx="0.000150983782199253"
+        ixy="-9.05933897929456E-09"
+        ixz="7.74950103975545E-08"
+        iyy="0.000151097790869217"
+        iyz="1.57286344201923E-07"
+        izz="0.000159818104969042" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mingurdf/meshes/zuobiao6.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.9 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mingurdf/meshes/zuobiao6.STL" />
+      </geometry>
+    </collision>
+  </link>
+      <gazebo reference="zuobiao6">
+        <material>Gazebo/White</material>
+      </gazebo>
+  <joint
+    name="zhuan5"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="0.7854 0 0" />
+    <parent
+      link="zuobiao5" />
+    <child
+      link="zuobiao6" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+
+    <transmission name="trans_zhixianmove">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="zhixianmove">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="zhixianmove_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>100</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_zhuan1">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="zhuan1">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="zhuan1_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>100</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_zhuan2">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="zhuan2">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="zhuan2_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>100</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_zhuan3">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="zhuan3">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="zhuan3_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>100</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_zhuan4">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="zhuan4">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="zhuan4_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>100</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_zhuan5">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="zhuan5">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="zhuan5_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <gazebo>
+        <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+            <robotNamespace>/arm</robotNamespace>
+            <controlPeriod>0.001</controlPeriod>
+        </plugin>
+    </gazebo>
+
+</robot>
+
+

@@ -1,0 +1,23 @@
+<launch>
+    <param name="robot_description" textfile="$(find mingurdf)/urdf/mingurdf_copy.urdf" />
+
+    <include file="$(find gazebo_ros)/launch/empty_world.launch" />
+    
+
+    <node pkg="gazebo_ros" type="spawn_model" name="model" args="-urdf -model arm -param robot_description"  />
+    <!--    
+        <node
+        name="fake_joint_calibration"
+        pkg="rostopic"
+        type="rostopic"
+        args="pub /calibrated std_msgs/Bool true" />
+    -->
+
+
+    <!--有需要再加上
+   <include file="$(find myrobot_control)/launch/myrobot_controltext.launch" />
+
+    -->
+
+</launch>
+
